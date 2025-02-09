@@ -1,0 +1,41 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5433/postgres</property>
+        <property name="connection.username">aston</property>
+        <property name="connection.password">aston</property>
+        <property name="connection.pool_size">10</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+        <property name="hibernate.dbcp.initialSize">5</property>
+        <property name="hibernate.dbcp.maxTotal">20</property>
+        <property name="hibernate.dbcp.maxIdle">10</property>
+        <property name="hibernate.dbcp.minIdle">5</property>
+        <property name="hibernate.dbcp.maxWaitMillis">-1</property>
+        <mapping class="by.aston.webdemo2.entity.Animal" />
+        <mapping class="by.aston.webdemo2.entity.relationships.User" />
+        <mapping class="by.aston.webdemo2.entity.relationships.UserProfile" />
+        <mapping class="by.aston.webdemo2.entity.relationships.Address" />
+        <mapping class="by.aston.webdemo2.entity.relationships.Role" />
+        <mapping class="by.aston.webdemo2.entity.relationships.Order" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.a_table_per_class.CreditCard" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.a_table_per_class.BankAccount" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.a_table_per_class.BillingDetails" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.b_union.CreditCard2" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.b_union.BankAccount2" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.b_union.BillingDetails2" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.c_single_table.CreditCard3" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.c_single_table.BankAccount3" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.c_single_table.BillingDetails3" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.d_join.CreditCard4" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.d_join.BankAccount4" />
+        <mapping class="by.aston.webdemo2.entity.inheritance.d_join.BillingDetails4" />
+    </session-factory>
+</hibernate-configuration>
